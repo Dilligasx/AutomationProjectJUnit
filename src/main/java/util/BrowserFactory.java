@@ -3,12 +3,11 @@ package util;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import page.Techfios101Page;
+@SuppressWarnings("unused")
 public class BrowserFactory{
 
 	static WebDriver driver;
@@ -16,7 +15,6 @@ public class BrowserFactory{
 	static String url;
 
 	
-	@Before
 	public static WebDriver init() {
 		System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -29,7 +27,7 @@ public class BrowserFactory{
 		return driver;	
 	}
 	
-	@After
+
 	public void tearDown() {
 		driver.close();
 		driver.quit();
